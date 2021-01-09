@@ -1,0 +1,61 @@
+/* Cambio la fuente por defecto y aplico un color al fondo. */
+body
+{
+    font-family: Helvetica, sans-serif;
+    background-color: cadetblue;
+}
+
+/* Estilo de la cabecera: Centrada, con borde redondeado. */
+.cabecera
+{
+    width: 80%;
+    margin: auto;
+    border-style:solid;
+    border-width:5px;
+    border-color:black;
+    background-color:black;
+    color:white;
+    border-radius:20px;
+    text-align: center;
+}
+
+/* Estilo del eneunciado: Centrada, con borde redondeado.*/
+.enunciado
+{
+    width: 80%;
+    margin: auto;
+    padding: 10px;
+    border-style:solid;
+    border-width: 5px;
+    border-color: navy;
+    background-color: powderblue;
+    border-radius:20px;
+}
+
+/* Estilo del ejercicio: Centrada, con borde redondeado. */
+.ejercicio
+{
+    width: 80%;
+    margin: auto;
+    padding: 10px;
+    border-style:solid;
+    border-width: 5px;
+    border-color: navy;
+    background-color: powderblue;
+    border-radius:20px;
+}
+
+.filacabeza
+{
+    background-color:#000066; 
+    color:white;
+}
+
+.fila:nth-child(odd) 
+{
+    background-color: #b3b3ff; 
+}
+.fila:nth-child(even) 
+{
+    background-color: #e6e6ff;
+}

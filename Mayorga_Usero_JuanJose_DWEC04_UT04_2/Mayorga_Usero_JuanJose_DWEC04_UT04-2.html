@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DWEC04 - Práctica 2 - Juan José Mayorga Usero</title>
+        <!-- Utilizo una hoja de estilos que he creado para mejorar la presentación de la Tarea. -->
+        <link  rel="stylesheet" type="text/css"  href="Mayorga_Usero_JuanJose_DWEC04_hojadeestilo.css"/>
+    </head>
+    <body>
+        <!-- Creo un div con mis datos y los del módulo, al que aplico un estilo. -->
+        <div class="cabecera">
+            <h3>CFGS Desarrollo de Aplicaciones Web</h3>
+            <h3>I.E.S. Maestre de Calatrava - Ciudad Real</h3>
+            <h3>Desarrollo Web en Entorno Cliente</h3>
+            <h3>Juan José Mayorga Usero</h3>
+        </div>
+        <br/>
+        <!-- Creo un div con el enunciado del apartado, al que aplico un estilo. -->
+        <div class="enunciado">
+            <h1>DWEC04</h1>
+            <h2>UT04 Práctica 2: Galería de imágenes</h2>
+            <h4>Vamos a construir la estructura de objetos necesaria para implementar una galería de imágenes en una aplicación JavaScript.</h4>
+            <h4>A continuación, se detalla los objetos que debemos implementar junto con su funcionalidad. Ten en cuenta que deberás implementar también la estructura de objetos necesaria para gestionar las excepciones que genere la aplicación.</h4>
+            <h3>1. Objeto Gallery</h3>
+            <h4>Este objeto mantendrá el estado de la galería. La información que debe mantener es:</h4>
+            <h4>- Título de la galería<br/>
+                - Las imágenes que hayamos añadido a la galería. Implementado mediante un array de objetos imágenes.<br/>
+                - Las categorías de imágenes que tengas en la galería. Implementado mediante un array de objetos categoría.<br/>
+                - Los autores de las diferentes imágenes. Implementado mediante un array.<br/>
+                - Categoría por defecto. En caso de no utilizar ninguna categoría a una imagen se utilizará esta categoría.<br/>
+                - Autor por defecto. En caso de no utilizar ningún autor al añadir una imagen, se utilizará este autor.     
+            </h4>
+            <h4>Los métodos que debéis implementar para este objeto son:</h4>
+            <table>
+                <tr class="filacabeza">
+                    <td>Método</td>
+                    <td>Funcionalidad</td>
+                    <td>Argumentos</td>
+                    <td>Retorno</td>
+                    <td>Excepciones</td>
+                </tr>
+                <tr class="fila">
+                    <td>Getter/setter title</td>
+                    <td>Para la propiedad Title</td>
+                    <td>String</td>
+                    <td>String</td>
+                    <td>- El título no puede ser vacío</td>
+                </tr>
+                <tr class="fila">
+                    <td>Getter Categories</td>
+                    <td>Devuelve el array de objetos categorías</td>
+                    <td>-</td>
+                    <td>[] Category</td>
+                    <td>-</td>
+                </tr>
+                <tr class="fila">
+                    <td>Getter Authors</td>
+                    <td>Devuelve un array con los autores</td>
+                    <td>-</td>
+                    <td>[] Author</td>
+                    <td>-</td>
+                </tr>
+                <tr class="fila">
+                    <td>addCategory</td>
+                    <td>Añade una nueva categoría</td>
+                    <td>Objeto Category</td>
+                    <td>Number con el nº de elementos</td>
+                    <td>- La categoría no puede ser null.<br/>
+                        - La categoría ya existe</td>
+                </tr>
+                <tr class="fila">
+                    <td>removeCategory</td>
+                    <td>Elimina una categoría</td>
+                    <td>Objeto Category</td>
+                    <td>Number con el nº de elementos</td>
+                    <td>- La categoría no está registrada</td>
+                </tr>
+                <tr class="fila">
+                    <td>addImage</td>
+                    <td>Añade una nueva imagen a una categoría con un autor.</td>
+                    <td>- Objeto Image<br/>
+                        - Objeto Category<br/>
+                        - Objeto Author<br/></td>
+                    <td>Number con el nº de elementos</td>
+                    <td>- La imagen no puede ser null.</td>
+                </tr>
+                <tr class="fila">
+                    <td>removeImage</td>
+                    <td>Elimina una imagen</td>
+                    <td>Objeto Image</td>
+                    <td>Number con el nº de elementos</td>
+                    <td>- La imagen no existe.</td>
+                </tr>
+                <tr class="fila">
+                    <td>getCategoryImages</td>
+                    <td>Devuelve todas las imágenes de una determinada categoría</td>
+                    <td>Objeto Category</td>
+                    <td>[]Images</td>
+                    <td>- La categoría no puede ser null.</td>
+                </tr>
+                <tr class="fila">
+                    <td>addAuthor</td>
+                    <td>Añade un nuevo autor a la Galería</td>
+                    <td>Objeto Author</td>
+                    <td>Number con el nº de autores.</td>
+                    <td>- El autor no puede ser nulo</td>
+                </tr>
+                <tr class="fila">
+                    <td>removeAuthor</td>
+                    <td>Eliminar un autor</td>
+                    <td>Objeto Author</td>
+                    <td>Number con el nº de elementos</td>
+                    <td>- Author no existente.</td>
+                </tr>
+                <tr class="fila">
+                    <td>getAuthorImages</td>
+                    <td>Devuelve todas las imágenes añadidas por un autor.</td>
+                    <td>Objeto Author</td>
+                    <td>[]Images</td>
+                    <td>- El autor no puede ser null.</td>
+                </tr>
+                <tr class="fila">
+                    <td>getPortraits</td>
+                    <td>Devuelve todas las imágenes de tipo retrato</td>
+                    <td>-</td>
+                    <td>[]Portrait</td>
+                    <td>-</td>
+                </tr>
+                <tr class="fila">
+                    <td>getLandscapes</td>
+                    <td>Devuelve todas las imágenes de tipo apaisado</td>
+                    <td>-</td>
+                    <td>[]Landscape</td>
+                    <td>-</td>
+                </tr>
+            </table>
+            <h3>2. Objeto Category</h3>
+            <h4>Con este objeto podemos crear la estructura de categorías de imágenes de la galería. Sus propiedades serán:</h4>
+            <h4>- Title: Con el título de la categoría.<br/>
+                - Description: Con la descripción de la misma.</h4>
+            <h4>Sus métodos serán los habituales getter y setter de estas propiedades, aunque el título no podrá ser vacío.</h4>
+            <h3>3. Objeto Image</h3>
+            <h4>Objeto que permitirá añadir imágenes a la galería. Tendrá las siguientes propiedades:</h4>
+            <h4>- Title: Título de la imagen. Obligatoria.<br/>
+                - Description: Descripción de la imagen.<br/>
+                - URL: Dirección donde está ubicada la imagen. Obligatoria.<br/>
+                - Coords: Coordenadas donde se tomó la imagen.</h4>
+            <h4>Como métodos tendrá los getter y setter habituales.</h4>
+            <h3>3.1. Objeto Landscape</h3>
+            <h4>Hereda de Image para especializar una imagen apaisada.<br/>
+                No tiene propiedades específicas.</h4>
+            <h3>3.2. Objeto Portrait</h3>
+            <h4>Hereda de Image para especilizar una imagen en forma de retrato.<br/>
+                No tiene propiedades específicas.</h4>
+            <h3>4. Objeto Coords</h3>
+            <h4>Coordenadas para adjuntar a una imagen. Sus propiedades son:</h4>
+            <h4>- Latitude: Latitud.<br/>
+                - Longitude: Longitud.</h4>
+            <h4>Los métodos serán getter y setter, siendo ambas propiedades obligatorias.</h4>
+            <h3>5. Objeto Author</h3>
+            <h4>Información del autor de la imagen. Sus propiedades son:</h4>
+            <h4>- Nickname: Nombre del autor. Obligatorio.<br/>
+                - Email: Correo electrónico. Obligatorio.<br/>
+                - Avatar: imagen asociada al usuario.</h4>
+            <h4>Como métodos tendrá los getter y setter habituales teniendo en cuenta las propiedades que son obligatorias.</h4>
+        </div>
+        <br/>
+        <!-- En este div resuelvo el ejercicio. -->
+        <div class="ejercicio">
+            <p>Para comprobar el correcto funcionamiento de cada una de las funciones implementadas, he desarollado una función de testeo en un archivo .js independiente en el que se deja un registro de cada una de las operación a través de la consola. <br/>
+            Para acceder a la consola:<br/>
+            - En Google Chrome, pulsar Ctrl + Shift + j.<br/>
+            - En Mozilla Firefox, pulsar Ctrl + Shift + k.<br/>
+            - En Opera, pulsar Ctrl + Shift + j.<br/>
+            - En Microsoft Edge, pulsar Ctrl + Shift + j.
+            <br/>
+            </p>
+        </div>
+        <!-- Indico la ruta del código javascript. -->
+        <script src="Excepciones.js"></script>
+        <script src="Gallery.js"></script>
+        <script src="Category.js"></script>
+        <script src="Image.js"></script>
+        <script src="Author.js"></script>
+        <script src="Landscape.js"></script>
+        <script src="Portrait.js"></script>
+        <script src="Coords.js"></script>
+        <script src="Testeo.js"></script>
+    </body>
+</html>
